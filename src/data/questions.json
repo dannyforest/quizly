@@ -1,0 +1,314 @@
+[
+  {
+    "text": "What is the capital of France?",
+    "choices": ["Paris", "Berlin", "Rome", "Madrid"],
+    "answer": "Paris",
+    "category": "Geography"
+  },
+  {
+    "text": "What is 2 + 2?",
+    "choices": ["3", "4", "5", "6"],
+    "answer": "4",
+    "category": "Mathematics"
+  },
+  {
+    "text": "What is the largest planet in our Solar System?",
+    "choices": ["Earth", "Jupiter", "Mars", "Neptune"],
+    "answer": "Jupiter",
+    "category": "Astronomy"
+  },
+  {
+    "text": "Who wrote the play 'Romeo and Juliet'?",
+    "choices": ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"],
+    "answer": "William Shakespeare",
+    "category": "Literature"
+  },
+  {
+    "text": "What is the chemical symbol for gold?",
+    "choices": ["Au", "Ag", "Fe", "Gd"],
+    "answer": "Au",
+    "category": "Chemistry"
+  },
+  {
+    "text": "Which country is known as the Land of the Rising Sun?",
+    "choices": ["China", "Japan", "South Korea", "Thailand"],
+    "answer": "Japan",
+    "category": "Geography"
+  },
+  {
+    "text": "What is the capital city of Australia?",
+    "choices": ["Sydney", "Melbourne", "Perth", "Canberra"],
+    "answer": "Canberra",
+    "category": "Geography"
+  },
+  {
+    "text": "Which element has the atomic number 1?",
+    "choices": ["Hydrogen", "Oxygen", "Nitrogen", "Carbon"],
+    "answer": "Hydrogen",
+    "category": "Chemistry"
+  },
+  {
+    "text": "Who painted the Mona Lisa?",
+    "choices": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+    "answer": "Leonardo da Vinci",
+    "category": "Art"
+  },
+  {
+    "text": "What is the largest mammal in the world?",
+    "choices": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+    "answer": "Blue Whale",
+    "category": "Biology"
+  },
+  {
+    "text": "In what year did the Titanic sink?",
+    "choices": ["1912", "1905", "1898", "1923"],
+    "answer": "1912",
+    "category": "History"
+  },
+  {
+    "text": "What is the capital of Egypt?",
+    "choices": ["Cairo", "Alexandria", "Giza", "Luxor"],
+    "answer": "Cairo",
+    "category": "Geography"
+  },
+  {
+    "text": "What gas do plants absorb from the atmosphere for photosynthesis?",
+    "choices": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "answer": "Carbon Dioxide",
+    "category": "Biology"
+  },
+  {
+    "text": "Which planet is known as the Red Planet?",
+    "choices": ["Mars", "Jupiter", "Saturn", "Venus"],
+    "answer": "Mars",
+    "category": "Astronomy"
+  },
+  {
+    "text": "What is the hardest natural substance on Earth?",
+    "choices": ["Gold", "Iron", "Diamond", "Quartz"],
+    "answer": "Diamond",
+    "category": "Geology"
+  },
+  {
+    "text": "Who is known for developing the theory of relativity?",
+    "choices": ["Isaac Newton", "Albert Einstein", "Stephen Hawking", "Nikola Tesla"],
+    "answer": "Albert Einstein",
+    "category": "Physics"
+  },
+  {
+    "text": "What is the longest river in the world?",
+    "choices": ["Nile", "Amazon", "Yangtze", "Mississippi"],
+    "answer": "Nile",
+    "category": "Geography"
+  },
+  {
+    "text": "Which language is primarily spoken in Brazil?",
+    "choices": ["Spanish", "Portuguese", "French", "English"],
+    "answer": "Portuguese",
+    "category": "Language"
+  },
+  {
+    "text": "What instrument is used to measure atmospheric pressure?",
+    "choices": ["Thermometer", "Barometer", "Hygrometer", "Anemometer"],
+    "answer": "Barometer",
+    "category": "Physics"
+  },
+  {
+    "text": "Which ocean is the largest in the world?",
+    "choices": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+    "answer": "Pacific Ocean",
+    "category": "Geography"
+  },
+  {
+    "text": "In computing, what does 'CPU' stand for?",
+    "choices": ["Central Processing Unit", "Computer Processing Unit", "Central Performance Unit", "Computer Power Unit"],
+    "answer": "Central Processing Unit",
+    "category": "Technology"
+  },
+  {
+    "text": "What is the primary ingredient in traditional Italian pesto sauce?",
+    "choices": ["Basil", "Parsley", "Cilantro", "Mint"],
+    "answer": "Basil",
+    "category": "Cuisine"
+  },
+  {
+    "text": "Which artist painted 'The Starry Night'?",
+    "choices": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Claude Monet"],
+    "answer": "Vincent van Gogh",
+    "category": "Art"
+  },
+  {
+    "text": "What is the main ingredient in guacamole?",
+    "choices": ["Tomato", "Avocado", "Lime", "Cilantro"],
+    "answer": "Avocado",
+    "category": "Cuisine"
+  },
+  {
+    "text": "In which country would you find the city of Istanbul?",
+    "choices": ["Greece", "Egypt", "Turkey", "Italy"],
+    "answer": "Turkey",
+    "category": "Geography"
+  },
+  {
+    "text": "What is the smallest planet in our Solar System?",
+    "choices": ["Mercury", "Venus", "Mars", "Pluto"],
+    "answer": "Mercury",
+    "category": "Astronomy"
+  },
+  {
+    "text": "Who is the author of the 'Harry Potter' series?",
+    "choices": ["J.R.R. Tolkien", "J.K. Rowling", "Stephen King", "Agatha Christie"],
+    "answer": "J.K. Rowling",
+    "category": "Literature"
+  },
+  {
+    "text": "Which element is represented by the symbol 'O' in the periodic table?",
+    "choices": ["Gold", "Oxygen", "Osmium", "Iron"],
+    "answer": "Oxygen",
+    "category": "Chemistry"
+  },
+  {
+    "text": "What is the capital city of Japan?",
+    "choices": ["Kyoto", "Osaka", "Tokyo", "Hiroshima"],
+    "answer": "Tokyo",
+    "category": "Geography"
+  },
+  {
+    "text": "What type of animal is a 'komodo dragon'?",
+    "choices": ["Bird", "Mammal", "Reptile", "Amphibian"],
+    "answer": "Reptile",
+    "category": "Biology"
+  },
+  {
+    "text": "What is the tallest mountain in the world?",
+    "choices": ["Mount Everest", "K2", "Kangchenjunga", "Lhotse"],
+    "answer": "Mount Everest",
+    "category": "Geography"
+  },
+  {
+    "text": "In what year did World War II end?",
+    "choices": ["1945", "1944", "1946", "1947"],
+    "answer": "1945",
+    "category": "History"
+  },
+  {
+    "text": "Who was the first person to walk on the Moon?",
+    "choices": ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "John Glenn"],
+    "answer": "Neil Armstrong",
+    "category": "Space Exploration"
+  },
+  {
+    "text": "What is the capital of Spain?",
+    "choices": ["Barcelona", "Madrid", "Seville", "Valencia"],
+    "answer": "Madrid",
+    "category": "Geography"
+  },
+  {
+    "text": "What is the largest ocean on Earth?",
+    "choices": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+    "answer": "Pacific Ocean",
+    "category": "Geography"
+  },
+  {
+    "text": "In what year did World War I begin?",
+    "choices": ["1914", "1918", "1939", "1945"],
+    "answer": "1914",
+    "category": "History"
+  },
+  {
+    "text": "What is the chemical symbol for water?",
+    "choices": ["H2O", "CO2", "O2", "H2SO4"],
+    "answer": "H2O",
+    "category": "Chemistry"
+  },
+  {
+    "text": "Who wrote the novel 'Pride and Prejudice'?",
+    "choices": ["Jane Austen", "Emily Brontë", "Louisa May Alcott", "Virginia Woolf"],
+    "answer": "Jane Austen",
+    "category": "Literature"
+  },
+  {
+    "text": "Which planet is closest to the Sun?",
+    "choices": ["Venus", "Earth", "Mercury", "Mars"],
+    "answer": "Mercury",
+    "category": "Astronomy"
+  },
+  {
+    "text": "What is the largest mammal in the world?",
+    "choices": ["African Elephant", "Blue Whale", "Giraffe", "Grizzly Bear"],
+    "answer": "Blue Whale",
+    "category": "Biology"
+  },
+  {
+    "text": "Who painted the 'Last Supper'?",
+    "choices": ["Leonardo da Vinci", "Michelangelo", "Raphael", "Donatello"],
+    "answer": "Leonardo da Vinci",
+    "category": "Art"
+  },
+  {
+    "text": "Which country is known as the land of the rising sun?",
+    "choices": ["Japan", "China", "South Korea", "Thailand"],
+    "answer": "Japan",
+    "category": "Geography"
+  },
+  {
+    "text": "What is the hardest natural substance on Earth?",
+    "choices": ["Diamond", "Gold", "Iron", "Quartz"],
+    "answer": "Diamond",
+    "category": "Geology"
+  },
+  {
+    "text": "What language has the most words?",
+    "choices": ["English", "Mandarin", "Spanish", "French"],
+    "answer": "English",
+    "category": "Language"
+  },
+  {
+    "text": "Which country invented tea?",
+    "choices": ["India", "China", "England", "Morocco"],
+    "answer": "China",
+    "category": "History"
+  },
+  {
+    "text": "What is the smallest country in the world?",
+    "choices": ["Vatican City", "Monaco", "Nauru", "San Marino"],
+    "answer": "Vatican City",
+    "category": "Geography"
+  },
+  {
+    "text": "What is the longest river in the world?",
+    "choices": ["Nile", "Amazon", "Yangtze", "Mississippi"],
+    "answer": "Nile",
+    "category": "Geography"
+  },
+  {
+    "text": "What is the capital city of Japan?",
+    "choices": ["Tokyo", "Kyoto", "Osaka", "Hiroshima"],
+    "answer": "Tokyo",
+    "category": "Geography"
+  },
+  {
+    "text": "Who is known as the father of modern physics?",
+    "choices": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
+    "answer": "Albert Einstein",
+    "category": "Physics"
+  },
+  {
+    "text": "What is the main ingredient in sushi?",
+    "choices": ["Fish", "Rice", "Seaweed", "Soy Sauce"],
+    "answer": "Rice",
+    "category": "Cuisine"
+  },
+  {
+    "text": "Who was the Greek god of the sea?",
+    "choices": ["Zeus", "Poseidon", "Hades", "Apollo"],
+    "answer": "Poseidon",
+    "category": "Mythology"
+  },
+  {
+    "text": "What is the name of the longest river in Africa?",
+    "choices": ["Congo", "Nile", "Zambezi", "Niger"],
+    "answer": "Nile",
+    "category": "Geography"
+  }
+]
