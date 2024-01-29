@@ -24,7 +24,7 @@ jobs:
     - name: Build and test
       run: |
         npm run build
-        npm test:unit
+        npm run test:unit
 
     - name: Deploy to production
       if: success()
