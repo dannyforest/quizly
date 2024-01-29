@@ -1,0 +1,38 @@
+name: CI/CD for Vue.js
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build and test
+      run: |
+        npm run build
+        npm test
+
+    - name: Deploy to production
+      if: success()
+      run: |
+        # Add your deployment script or commands here
+        - name: Archive production artifacts
+          uses: actions/upload-artifact@v2
+          with:
+            name: dist
+            path: dist/
+
