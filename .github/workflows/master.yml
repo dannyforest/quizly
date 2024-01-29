@@ -3,7 +3,7 @@ name: CI/CD for Vue.js
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
@@ -30,9 +30,10 @@ jobs:
       if: success()
       run: |
         # Add your deployment script or commands here
-        - name: Archive production artifacts
-          uses: actions/upload-artifact@v2
-          with:
-            name: dist
-            path: dist/
+        
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: dist/
 
