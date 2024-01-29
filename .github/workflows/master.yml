@@ -12,8 +12,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-      with:
-        node-version: '20'
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
@@ -38,5 +36,3 @@ jobs:
       with:
         name: dist
         path: dist/
-        node-version: '20'
-
