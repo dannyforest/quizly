@@ -1,7 +1,7 @@
 <template>
   <div id="quiz">
     <img src="/public/images/logo.png" alt="logo" width="64"/>
-    <h1>Quizzy Peak v4</h1>
+    <h1>Quizzy Peak</h1>
 
     <StartOptionsComponent :categories="categories" v-if="!quizStarted" @start-quiz="startQuiz"
                            @category-changed="handleCategoryChanged"/>
