@@ -3,7 +3,7 @@ name: CI/CD for Vue.js
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
