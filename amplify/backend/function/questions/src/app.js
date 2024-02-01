@@ -9,9 +9,9 @@ See the License for the specific language governing permissions and limitations 
 
 
 
-const express = require('express')
-const bodyParser = require('body-parser')
-const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+import express from 'express'
+import bodyParser from 'body-parser'
+import awsServerlessExpressMiddleware from 'aws-serverless-express/middleware'
 
 // declare a new express app
 const app = express()
@@ -89,4 +89,4 @@ app.listen(3000, function() {
 // Export the app object. When executing the application local this does nothing. However,
 // to port it to AWS Lambda we will create a wrapper around that will load the app from
 // this file
-module.exports = app
+export default app
