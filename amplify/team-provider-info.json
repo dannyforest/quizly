@@ -10,6 +10,11 @@
       "StackName": "amplify-quizly-dev-81120",
       "StackId": "arn:aws:cloudformation:us-east-1:975050248766:stack/amplify-quizly-dev-81120/64d1ae70-c103-11ee-8810-121a44162c3f",
       "AmplifyAppId": "d5qm9ctt7lwjs"
+    },
+    "categories": {
+      "function": {
+        "questions": {}
+      }
     }
   }
 }
