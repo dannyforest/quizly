@@ -17,7 +17,6 @@
 
 <script setup>
 import { ref, watch, onMounted } from 'vue';
-import { defineProps } from 'vue';
 
 const props = defineProps({
   selectedCategory: String
