@@ -4,7 +4,7 @@ import Timer from '@/components/Timer.vue'
 
 vi.useFakeTimers();
 
-describe.only('Timer.vue', () => {
+describe('Timer.vue', () => {
     let wrapper;
     let timer;
     beforeEach(() => {

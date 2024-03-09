@@ -24,4 +24,4 @@ describe('ProgressBar.vue', () => {
 
     expect(wrapper.vm.progressBarWidth).toEqual('60%')
   })
-})
+}) 
