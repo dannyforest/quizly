@@ -3,7 +3,7 @@ import { describe, it, expect, beforeEach, vi } from 'vitest'
 import StartOptions from '@/components/StartOptions.vue'
 import questions from '@/data/questions.json'
 
-describe.only('StartOptions.vue', () => {
+describe('StartOptions.vue', () => {
   let wrapper
   let categories
   beforeEach(() => {
@@ -45,8 +45,5 @@ describe.only('StartOptions.vue', () => {
         expect(wrapper.emitted()['start-quiz']).toBeTruthy() // #23
       })
     })
-    /* describe('', () =>{
-
-    }) */
   })
 })
