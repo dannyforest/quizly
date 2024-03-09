@@ -5,7 +5,7 @@ import EditQuestions from '@/views/EditQuestionsView.vue'
 import App from '@/App.vue'
 import router from '@/router'
 
-describe.only('Router', () => {
+describe('Router', () => {
   let wrapper
 
   beforeEach(() => {
