@@ -13,14 +13,14 @@
   ],
   "compilerOptions": {
     "outDir": "out",
-    "module": "commonjs",
+    "module": "NodeNext",
     "target": "es6",
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "allowJs": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
     "removeComments": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
