@@ -1,7 +1,7 @@
 beforeEach(()=>{
   cy.visit('/')
 })
-describe.only('Quiz', () => {
+describe('Quiz', () => {
     it('completes a quiz', () => {
       cy.get('input.input-field').type('Michel')
       cy.get('#startOptions > :nth-child(2)').select('Geography')
@@ -14,21 +14,21 @@ describe.only('Quiz', () => {
       cy.get('.results').should('be.visible')
       cy.get('.restart-button').should('be.visible')
       cy.get('.restart-button').click()
-      cy.get('li').should('be.visible')
+      cy.get('li').should('be.visible') // #1
     })
   })
 
   describe('add/edit questions', () => {
     beforeEach(()=>{      
       cy.get('.edit-questions-button').click()
-      cy.location('pathname').should('eq', '/edit')
+      cy.location('pathname').should('eq', '/edit') // #2
     })
     describe('Questions', () => {
       it('edits a question', () => {
         const stub = cy.stub()
         cy.on ('window:alert', stub)
         cy.get(':nth-child(1) > .question-content > .question-input').clear()
-        cy.get(':nth-child(1) > .question-content > .question-input').type(' Is it, or is it not?')
+        cy.get(':nth-child(1) > .question-content > .question-input').type('Is it, or is it not?')
         cy.get(':nth-child(1) > .category-dropdown').select('Literature')
         cy.get(':nth-child(1) > .choices-container > :nth-child(2) > input').clear()
         cy.get(':nth-child(1) > .choices-container > :nth-child(2) > input').type('Yesnt')
@@ -43,6 +43,7 @@ describe.only('Quiz', () => {
         cy.get('.save-button').then(($button)=>{
           $button.click()
           expect(stub.getCall(0)).to.be.calledWith('Questions saved!')
+          cy.get(':nth-child(1) > .question-content > .question-input').should('have.value', 'Is it, or is it not?') // #3
         })
       })
     })
@@ -60,7 +61,7 @@ describe.only('Quiz', () => {
         cy.get('.add-question-button').then(($button)=>{
           $button.click()
           expect(stub.getCall(0)).to.be.calledWith('Questions saved!')
-          cy.get(':nth-child(53)').should('be.visible')
+          cy.get(':nth-child(53)').should('be.visible') // #4
         })
 
       })
@@ -72,7 +73,7 @@ describe.only('Quiz', () => {
         cy.get(':nth-child(52) > .delete-button').then(($button)=>{
           $button.click()
           expect(stub.getCall(0)).to.be.calledWith('Are you sure you want to delete this question?')
-          cy.get('.questions-container').find('.delete-button').should('have.length', 51)
+          cy.get('.questions-container').find('.delete-button').should('have.length', 51) // #5
         })  
       })
     })

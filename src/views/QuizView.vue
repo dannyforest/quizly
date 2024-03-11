@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import {ref, computed, onMounted} from 'vue';
+import {ref, onMounted} from 'vue';
 import Quiz from '../components/Quiz.vue';
 import Results from '../components/Results.vue';
 import ProgressBar from '../components/ProgressBar.vue';

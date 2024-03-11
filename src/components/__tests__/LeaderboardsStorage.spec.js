@@ -64,12 +64,12 @@ describe.only('LocalStorage', () => {
       expect(wrapper.vm.questions).toStrictEqual(mockQuestions) // #4
     })
   })
-//NOT SURE THIS TEST IS VALID
+  
   describe('QuizView.vue', () => {
     it('reads local storage', () => {
       wrapper = mount(QuizView)
 
-      expect(wrapper.vm.highScores).toStrictEqual(mockHighScores) // #5 ?
+      expect(wrapper.vm.highScores).toStrictEqual(mockHighScores) // #5
     })
 
     it('writes to local storage', async () => {
