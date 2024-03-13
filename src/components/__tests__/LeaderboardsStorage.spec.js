@@ -4,7 +4,7 @@ import Leaderboards from '../Leaderboards.vue'
 import EditQuestionsView from '@/views/EditQuestionsView.vue'
 import QuizView from '@/views/QuizView.vue'
 
-describe.only('LocalStorage', () => {
+describe('LocalStorage', () => {
   let wrapper
   const mockHighScores = {
     Geography: [

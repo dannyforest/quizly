@@ -8,7 +8,7 @@ import ProgressBar from '../ProgressBar.vue'
 import Quiz from '../Quiz.vue'
 import Results from '../Results.vue'
 
-describe.only('QuizView', () => {
+describe('QuizView', () => {
   let wrapper
 
   beforeEach(() => {})
@@ -35,7 +35,7 @@ describe.only('QuizView', () => {
     const LeaderboardsComponent = wrapper.findComponent(Leaderboards)
     expect(LeaderboardsComponent.exists()).toBeTruthy() // #8
   })
-  
+
   describe('testStarted', async () => {
     it('verifies that Timer exists', async () => {
       wrapper.vm.quizStarted = true
@@ -52,12 +52,21 @@ describe.only('QuizView', () => {
       const QuizComponent = wrapper.findComponent(Quiz)
       expect(QuizComponent.exists()).toBeTruthy() // #11
     })
-    it('verifies that Results exists', async () => {
+    it('verifies that Results exists and restart the quiz', async () => {
       wrapper.vm.quizStarted = true
       wrapper.vm.showResults = true
       await wrapper.vm.$nextTick()
-      const ResultsComponent = wrapper.findComponent(Results)
-      expect(ResultsComponent.exists()).toBeTruthy() // #12
+      const resultsComponent = wrapper.findComponent(Results)
+      expect(resultsComponent.exists()).toBeTruthy() // #12
+
+      wrapper.find('.restart-button').trigger('click')
+
+      await wrapper.vm.$nextTick()
+      expect(wrapper.vm.showResults).toBeFalsy() // #13
+      expect(wrapper.vm.quizStarted).toBeFalsy() // #14
+      expect(wrapper.vm.userAnswers.length).toEqual(0) // #15
+      expect(wrapper.vm.score).toEqual(0) // #15
     })
+   
   })
 })
