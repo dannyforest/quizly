@@ -36,7 +36,7 @@ describe('StartOptions.vue', () => {
         await wrapper.vm.emitStartQuiz()
         expect(window.alert).toHaveBeenCalledWith('Please fill in all the options') //#22
       })
-      it('verifies the if',async () => {
+      it('verifies the if', async () => {
         const selects = wrapper.findAll('select')
         wrapper.find('input').setValue('Charles')
         selects[0].setValue(wrapper.props('categories')[0])

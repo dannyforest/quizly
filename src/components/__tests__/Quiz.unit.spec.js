@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { describe, it, expect} from 'vitest'
+import { describe, it, expect } from 'vitest'
 import Quiz from '@/components/Quiz.vue'
 
 describe('Quiz.vue', () => {

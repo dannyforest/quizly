@@ -67,6 +67,5 @@ describe('QuizView', () => {
       expect(wrapper.vm.userAnswers.length).toEqual(0) // #15
       expect(wrapper.vm.score).toEqual(0) // #15
     })
-   
   })
 })

@@ -23,7 +23,7 @@ describe('Results.vue', () => {
         expect(wrapper.find('h2').text()).toBe('Your Quiz Results') // #11
         expect(wrapper.find('button').text()).toBe('🔁 Restart Quiz') // #12
         expect(findAllLi.length).toEqual(wrapper.props('questions').length) // #13
-        expect(findAllLi[0].find('div').text()).toContain('Your answer: ') // #14
+        expect(findAllLi[0].find('div').text()).toContain('Your answer: ') // #14 DANNY DIT QUE : "C'EST PAS BON.. TRAVAIL DE MARDE"
       })
       describe('Answers', () => {
         it('verifies that the span v-if works', () => {

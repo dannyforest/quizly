@@ -11,7 +11,7 @@ describe('ProgressBar.vue', () => {
       }
     })
 
-    expect(wrapper.vm.progressLabel).toEqual('Question 2 of 4')
+    expect(wrapper.vm.progressLabel).toEqual('Question 2 of 4') // #25
   })
 
   it('computes progressBarWidth correctly', () => {
@@ -22,6 +22,6 @@ describe('ProgressBar.vue', () => {
       }
     })
 
-    expect(wrapper.vm.progressBarWidth).toEqual('60%')
+    expect(wrapper.vm.progressBarWidth).toEqual('60%') // #26
   })
-}) 
+})

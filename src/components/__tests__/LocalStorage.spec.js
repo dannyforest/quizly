@@ -64,7 +64,7 @@ describe('LocalStorage', () => {
       expect(wrapper.vm.questions).toStrictEqual(mockQuestions) // #4
     })
   })
-  
+
   describe('QuizView.vue', () => {
     it('reads local storage', () => {
       wrapper = mount(QuizView)
@@ -74,10 +74,10 @@ describe('LocalStorage', () => {
 
     it('writes to local storage', async () => {
       wrapper = mount(QuizView)
-      
-      wrapper.vm.highScores = mockHighScores;
 
-      await wrapper.vm.updateHighScore();
+      wrapper.vm.highScores = mockHighScores
+
+      await wrapper.vm.updateHighScore()
 
       expect(JSON.parse(localStorage.getItem('highScores'))).toStrictEqual(mockHighScores) // #6
     })
