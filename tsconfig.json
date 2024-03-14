@@ -13,14 +13,13 @@
   ],
   "compilerOptions": {
     "outDir": "out",
-    "module": "commonjs",
-    "target": "es6",
+    "module": "es2020",
+    "target": "es2020",
     "moduleResolution": "node",
     "allowJs": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
     "removeComments": true,
-    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
