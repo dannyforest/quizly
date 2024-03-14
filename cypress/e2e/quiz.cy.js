@@ -1,7 +1,7 @@
 describe('Quiz', () => {
   const numberOfQuestion = '5'
   it('plays through the quiz', () => {
-    cy.visit('http://localhost:5174')
+    cy.visit('http://localhost:4173')
     cy.get('input').type('boop')
     cy.get('select:eq(0)').select('Literature')
     cy.get('select:eq(2)').select(numberOfQuestion)

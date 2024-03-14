@@ -46,10 +46,32 @@ describe('EditQuestions', () => {
     })
     cy.get('.choices-container > .choice-input > input').then((inputs) => {
       const index = inputs.length
-			cy.get(".choices-container > .choice-input > input").eq(index -4).should("have.value", answer)
-			cy.get(".choices-container > .choice-input > input").eq(index -3).should("have.value", choice1)
-			cy.get(".choices-container > .choice-input > input").eq(index -2).should("have.value", choice2)
-			cy.get(".choices-container > .choice-input > input").eq(index -1).should("have.value", choice3)
+      cy.get('.choices-container > .choice-input > input')
+        .eq(index - 4)
+        .should('have.value', answer)
+      cy.get('.choices-container > .choice-input > input')
+        .eq(index - 3)
+        .should('have.value', choice1)
+      cy.get('.choices-container > .choice-input > input')
+        .eq(index - 2)
+        .should('have.value', choice2)
+      cy.get('.choices-container > .choice-input > input')
+        .eq(index - 1)
+        .should('have.value', choice3)
     })
+  })
+  it('allows a user to edit a question', () => {
+    cy.visit('http://localhost:4173/edit')
+
+    cy.get('.question-block')
+      .first()
+      .within(() => {
+        cy.get('.question-input').clear().type('New question text')
+
+        cy.get('.choice-input input').first().clear().type('New answer option')
+
+        cy.get('.answer-input').clear().type('New correct answer')
+      })
+    cy.get('.save-button').click()
   })
 })

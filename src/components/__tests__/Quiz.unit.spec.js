@@ -46,4 +46,13 @@ describe('Quiz', () => {
       expect(wrapper.emitted('quiz-completed')).toBeTruthy()
     })
   })
+  it('selectAnswer emits answer-selected', async () => {
+    const wrapper = mount(Quiz, {
+      props: { questions: questions, currentQuestionIndex: 0 }
+    })
+    const answer = 'Sample Answer'
+    wrapper.vm.selectAnswer(answer)
+    await wrapper.vm.$nextTick()
+    expect(wrapper.emitted('answer-selected')[0]).toEqual([answer])
+  })
 })
