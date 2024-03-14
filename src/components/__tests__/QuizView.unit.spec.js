@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import { describe, it, expect, beforeEach } from "vitest";
 import { mockLocalStorage } from "./localStorageMock";
 import QuizView from "@/views/QuizView.vue";
@@ -29,9 +29,27 @@ describe("QuizView.vue", () => {
   ];
 
   beforeEach(() => {
-    wrapper = shallowMount(QuizView);
+    wrapper = mount(QuizView);
     localStorageMock = mockLocalStorage();
     global.localStorage = localStorageMock;
+  });
+
+  describe("QuizSetup.vue", () => {
+    it("renders the initial state correctly", () => {
+      // Title
+      expect(wrapper.find("h1").text()).toBe("Quizzy Peak");
+
+      // Input field name
+      expect(wrapper.find(".input-field").exists()).toBeTruthy();
+      expect(wrapper.vm.username).toBe("");
+
+      // Selects
+      expect(wrapper.findAll("select").length).toBe(3);
+
+      // Buttons
+      expect(wrapper.findAll("button").length).toBe(2);
+      expect(wrapper.find("button").text()).toBe("Start Quiz");
+    });
   });
 
   describe("handleCategoryChanged", () => {
