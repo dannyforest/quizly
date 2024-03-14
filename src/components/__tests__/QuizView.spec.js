@@ -21,6 +21,7 @@ describe('QuizView', () => {
       expect(startOptions).toBeDefined()
     })
   })
+	// Danny a dit que c'est correct que ce test passe pas
   describe('handleCategoryChanged', () => {
     it('changes selectedCategory when category-changed is emitted from the StartOptions Component', async () => {
       const wrapper = mount(QuizView)
