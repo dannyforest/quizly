@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import Timer from '../Timer.vue'
 
 describe('Timer', () => {
@@ -41,5 +41,31 @@ describe('Timer', () => {
     wrapper.vm.stop()
 
     expect(clearIntervalMock).toHaveBeenCalledTimes(1)
+  })
+	describe('Time-up', () => {
+    // vi.useFakeTimers() to mock timer
+    beforeEach(() => {
+      vi.useFakeTimers()
+    })
+
+    it('emits time-up when timeLeft == 0', async () => {
+      // Mount with duration
+      const wrapper = mount(Timer, {
+        props: {
+          duration: 1
+        }
+      })
+
+      // Timer 1000ms (1 second)
+      vi.runAllTimers()
+
+      // Checks if the time-up event was emitted
+      expect(wrapper.emitted()).toHaveProperty('time-up')
+      // Checks if the time-up event was emitted once
+      expect(wrapper.emitted('time-up')).toHaveLength(1)
+
+      // Clear timer
+      vi.restoreAllMocks()
+    })
   })
 })

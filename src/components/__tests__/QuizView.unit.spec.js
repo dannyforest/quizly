@@ -18,4 +18,15 @@ describe('initial state', () => {
   it('selectedTimeLimit initially returns 60', () => {
     expect(wrapper.vm.selectedTimeLimit).toBe('60')
   })
+  it('initial state should indicate that the quiz has not started', () => {
+    // Check if the quizStarted is false, indicating the quiz hasn't started
+    expect(wrapper.vm.quizStarted).toBe(false)
+  })
+  it('should correctly initialize the selected questions based on the predefined number', async () => {
+    // Expected number of selected questions
+    const selectedNumQuestions = 5
+
+    // Check if the length of the selectedQuestions array matches the expected number
+    expect(wrapper.vm.selectedQuestions.length).toBe(selectedNumQuestions)
+  })
 })
