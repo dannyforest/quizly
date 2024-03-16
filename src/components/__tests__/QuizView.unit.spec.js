@@ -34,7 +34,7 @@ describe("QuizView.vue", () => {
     global.localStorage = localStorageMock;
   });
 
-  describe("QuizSetup.vue", () => {
+  describe("Initial State", () => {
     it("renders the initial state correctly", () => {
       // Title
       expect(wrapper.find("h1").text()).toBe("Quizzy Peak");
@@ -52,7 +52,7 @@ describe("QuizView.vue", () => {
     });
   });
 
-  describe("handleCategoryChanged", () => {
+  describe("handleCategoryChanged()", () => {
     it("changes the category", async () => {
       const newCategory = "Biology";
       await wrapper.vm.handleCategoryChanged(newCategory);
@@ -60,7 +60,7 @@ describe("QuizView.vue", () => {
     });
   });
 
-  describe("startQuiz", () => {
+  describe("startQuiz()", () => {
     const options = {
       username: "John",
       selectedCategory: "Art",
@@ -82,7 +82,7 @@ describe("QuizView.vue", () => {
     });
   });
 
-  describe("prepareQuiz", () => {
+  describe("prepareQuiz()", () => {
     it("gets the questions from the localStorage", async () => {
       localStorageMock.getItem.mockReturnValue(JSON.stringify(questionsSample));
       wrapper.vm.selectedCategory = "Astronomy";
@@ -100,7 +100,7 @@ describe("QuizView.vue", () => {
     });
   });
 
-  describe("handleAnswerSelected", () => {
+  describe("handleAnswerSelected()", () => {
     beforeEach(() => {
       wrapper.vm.currentQuestionIndex = 0;
       wrapper.vm.selectedQuestions = questionsSample;

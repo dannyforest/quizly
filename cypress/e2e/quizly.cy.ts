@@ -1,13 +1,36 @@
 describe("Quizzly", () => {
-  it("start a new quiz", () => {
-    cy.visit("http://localhost:4173");
+  const name = "John";
+  const numberOfQuestions = 5;
+
+  const startQuiz = () => {
+    cy.get("input.input-field").type(name);
+    cy.get("#startOptions > :nth-child(2)").select("Geography");
+    cy.get("#startOptions > :nth-child(4)").select(numberOfQuestions.toString());
     cy.get(".start-button").click();
-    cy.url().should("eq", "http://localhost:4173/quiz");
-    cy.get(".question-input").should("have.value", "What is the capital of France?");
+  };
+
+  beforeEach(() => {
+    cy.visit("http://localhost:4173");
   });
 
-  it.only("Delete a question", () => {
-    cy.visit("http://localhost:4173");
+  it("start a new quiz", () => {
+    startQuiz();
+    cy.get(".timer").should("exist");
+  });
+
+  it("does a quiz entirely and checks the score", () => {
+    startQuiz();
+    for (let i = 0; i < numberOfQuestions; i++) {
+      cy.get(".choices > :nth-child(1)").click();
+    }
+    cy.get(".restart-button").should("exist");
+    cy.get(".restart-button").click();
+    cy.get(".timer").should("not.exist");
+    cy.get("#quiz").should("contain", "Leaderboards");
+    cy.get("#quiz").should("contain", name);
+  });
+
+  it("Delete a question", () => {
     cy.contains("Quizzy");
     cy.get(".edit-questions-button").click();
     const firstQuestion = ":nth-child(1) > .question-content > .question-input";

@@ -1,27 +1,24 @@
-import { mount } from '@vue/test-utils'
-import { describe, it, expect } from 'vitest'
-import ProgressBar from '@/components/ProgressBar.vue'
+import { shallowMount } from "@vue/test-utils";
+import { describe, it, expect, beforeEach } from "vitest";
+import ProgressBar from "@/components/ProgressBar.vue";
 
-describe('ProgressBar.vue', () => {
-  it('computes progressLabel correctly', () => {
-    const wrapper = mount(ProgressBar, {
+describe("ProgressBar.vue", () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallowMount(ProgressBar, {
       props: {
         currentQuestionIndex: 1,
-        totalQuestions: 4
-      }
-    })
+        totalQuestions: 4,
+      },
+    });
+  });
 
-    expect(wrapper.vm.progressLabel).toEqual('Question 2 of 4')
-  })
+  it("computes progressLabel correctly", () => {
+    expect(wrapper.vm.progressLabel).toEqual("Question 2 of 4");
+  });
 
-  it('computes progressBarWidth correctly', () => {
-    const wrapper = mount(ProgressBar, {
-      props: {
-        currentQuestionIndex: 2,
-        totalQuestions: 5
-      }
-    })
-
-    expect(wrapper.vm.progressBarWidth).toEqual('60%')
-  })
-})
+  it("computes progressBarWidth correctly", () => {
+    expect(wrapper.vm.progressBarWidth).toEqual("50%");
+  });
+});
