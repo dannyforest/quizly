@@ -84,10 +84,10 @@ describe("QuizView.vue", () => {
 
   describe("prepareQuiz()", () => {
     it("gets the questions from the localStorage", async () => {
-      localStorageMock.getItem.mockReturnValue(JSON.stringify(questionsSample));
+      localStorageMock.getItem.mockReturnValue(JSON.stringify(questionsSample)); // Mock localStorage and return sample questions
       wrapper.vm.selectedCategory = "Astronomy";
       await wrapper.vm.prepareQuiz();
-      expect(wrapper.vm.selectedQuestions.length).toBe(1);
+      expect(wrapper.vm.selectedQuestions.length).toBe(1); // Only one question in the sample has the category "Astronomy"
       expect(wrapper.vm.selectedQuestions[0].category).toBe("Astronomy");
     });
 
