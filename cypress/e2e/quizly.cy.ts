@@ -1,6 +1,7 @@
 describe("Quizzly", () => {
   const name = "John";
   const numberOfQuestions = 5;
+  let stub;
 
   const startQuiz = () => {
     cy.get("input.input-field").type(name);
@@ -11,6 +12,7 @@ describe("Quizzly", () => {
 
   beforeEach(() => {
     cy.visit("http://localhost:4173");
+    stub = cy.stub();
   });
 
   it("start a new quiz", () => {
@@ -28,6 +30,52 @@ describe("Quizzly", () => {
     cy.get(".timer").should("not.exist");
     cy.get("#quiz").should("contain", "Leaderboards");
     cy.get("#quiz").should("contain", name);
+  });
+
+  it("successfully adds a new question", () => {
+    cy.get(".edit-questions-button").click();
+    cy.get(".question-input").first().type("New Test Question");
+    cy.get(".category-dropdown").first().select("Mathematics");
+    cy.get(".choice-input input").first().type("Choice 1");
+    cy.get(".choice-input input").eq(1).type("Choice 2");
+    cy.get(".answer-input").first().type("Correct Answer");
+    cy.on("window:alert", stub);
+    cy.get(".add-question-button")
+      .click()
+      .then(() => {
+        expect(stub).to.be.calledWith("Questions saved!");
+      });
+    cy.get(".back-button").click();
+    cy.get(".edit-questions-button").click();
+    cy.get(".question-input").last().should("have.value", "New Test Question");
+  });
+
+  it("successfully modifies a question", () => {
+    cy.get(".edit-questions-button").click();
+    cy.get(":nth-child(1) > .question-content > .question-input")
+      .clear()
+      .type("Nouveau texte de la question");
+    cy.get(":nth-child(1) > .category-dropdown").select("Mathematics");
+
+    cy.get(":nth-child(1) > .choices-container > :nth-child(2) > input")
+      .clear()
+      .type("Nouveau choix 1");
+    cy.get(":nth-child(1) > .answer-content > .answer-input")
+      .clear()
+      .type("Nouvelle réponse correcte");
+    cy.on("window:alert", stub);
+    cy.get(".save-button")
+      .click()
+      .then(() => {
+        expect(stub).to.be.calledWith("Questions saved!");
+      });
+    cy.get(".back-button").click();
+    cy.get(".edit-questions-button").click();
+    cy.get(".question-block").first().as("firstQuestion");
+    cy.get(":nth-child(1) > .question-content > .question-input").should(
+      "have.value",
+      "Nouveau texte de la question",
+    );
   });
 
   it("Delete a question", () => {
