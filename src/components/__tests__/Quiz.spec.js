@@ -9,11 +9,13 @@ describe("Quiz.vue", () => {
 
   beforeEach(async () => {
     wrapper = mount(QuizView);
+
     await wrapper.vm.startQuiz({
       selectedCategory: "Geography",
       selectedTimeLimit: 60,
       selectedNumQuestions: 5,
     });
+
     quizComponent = wrapper.findComponent(Quiz);
   });
 
@@ -21,13 +23,13 @@ describe("Quiz.vue", () => {
     expect(quizComponent.exists()).toBe(true);
   });
 
-  it("should select an answer", async () => {
+  it("should emit 'answer-selected' event when an answer is selected", async () => {
     const choice = "Test Answer";
     await quizComponent.vm.selectAnswer(choice);
     expect(quizComponent.emitted("answer-selected")).toBeTruthy();
   });
 
-  it("should complete the quiz on last question", async () => {
+  it("should emit 'quiz-completed' event when all questions are answered", async () => {
     for (let index = 0; index < 5; index++) {
       const choice = quizComponent.vm.currentQuestion.choices[0];
       await quizComponent.vm.selectAnswer(choice);

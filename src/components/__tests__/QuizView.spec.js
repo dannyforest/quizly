@@ -78,7 +78,7 @@ describe("QuizView", () => {
     const startQuiz = async () => {
       await wrapper.vm.startQuiz({
         selectedCategory: "Geography",
-        selectedTimeLimit: "60",
+        selectedTimeLimit: "2",
         selectedNumQuestions: "5",
       });
       timerComponent = wrapper.findComponent(Timer);
@@ -90,7 +90,7 @@ describe("QuizView", () => {
 
     it("mounts the Timer component when a quiz is started", async () => {
       expect(timerComponent).toBeDefined();
-      expect(timerComponent.text()).toBe("Time left: 1:00");
+      expect(timerComponent.text()).toBe("Time left: 0:02");
     });
 
     it('Should emit "time-up" when the time is up', async () => {

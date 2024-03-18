@@ -54,6 +54,7 @@ describe("QuizView.vue", () => {
 
   describe("handleCategoryChanged()", () => {
     it("changes the category", async () => {
+      wrapper.vm.selectedCategory = "Geography";
       const newCategory = "Biology";
       await wrapper.vm.handleCategoryChanged(newCategory);
       expect(wrapper.vm.selectedCategory).toBe("Biology");
