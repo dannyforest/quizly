@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { mount } from "@vue/test-utils";
 import QuizView from "@/views/QuizView.vue";
 import StartOptionsComponent from "@/components/StartOptions.vue";
-import Result from "@/components/Results.vue";
+import Results from "@/components/Results.vue";
 import Timer from "@/components/Timer.vue";
 
 describe("QuizView", () => {
@@ -56,10 +56,8 @@ describe("QuizView", () => {
   });
 
   describe("Results.vue", () => {
-    let resultComponent;
-
-    beforeEach(() => {
-      resultComponent = mount(Result, {
+    it("emits restart event on button click", async () => {
+      const resultsComponent = mount(Results, {
         props: {
           score: 3,
           questions: [
@@ -69,37 +67,33 @@ describe("QuizView", () => {
           userAnswers: ["4", "JavaScript"],
         },
       });
-    });
-
-    it("emits restart event on button click", async () => {
-      await resultComponent.find(".restart-button").trigger("click");
-      expect(resultComponent.emitted("restart")).toBeTruthy();
+      await resultsComponent.find(".restart-button").trigger("click");
+      expect(resultsComponent.emitted("restart")).toBeTruthy();
     });
   });
-  ////////////////
+
   describe("Timer.vue", () => {
-    it("mounts the Timer component when a quiz is started", async () => {
+    let timerComponent;
+
+    const startQuiz = async () => {
       await wrapper.vm.startQuiz({
         selectedCategory: "Geography",
         selectedTimeLimit: "60",
         selectedNumQuestions: "5",
       });
+      timerComponent = wrapper.findComponent(Timer);
+    };
 
-      const timerComponent = wrapper.findComponent(Timer);
+    beforeEach(() => {
+      startQuiz();
+    });
 
+    it("mounts the Timer component when a quiz is started", async () => {
       expect(timerComponent).toBeDefined();
       expect(timerComponent.text()).toBe("Time left: 1:00");
     });
 
     it('Should emit "time-up" when the time is up', async () => {
-      await wrapper.vm.startQuiz({
-        selectedCategory: "Geography",
-        selectedTimeLimit: "02",
-        selectedNumQuestions: "5",
-      });
-
-      const timerComponent = wrapper.findComponent(Timer);
-
       // Le timer initial est réglé à 2 secondes, le setTimeout est réglé à 3 secondes pour laisser le temps
       // au timer d'arriver à zéro.
       await new Promise((resolve) => setTimeout(resolve, 3000));
