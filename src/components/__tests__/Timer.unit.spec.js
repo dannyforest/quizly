@@ -42,7 +42,27 @@ describe('Timer', () => {
 
     expect(clearIntervalMock).toHaveBeenCalledTimes(1)
   })
-	describe('Time-up', () => {
+  describe('timeLeft', () => {
+    beforeEach(() => {
+      vi.useFakeTimers()
+    })
+    it('should decrease timeLeft over time', async () => {
+      const wrapper = mount(Timer, {
+        props: {
+          duration: 300
+        }
+      })
+      vi.runAllTimers()
+
+      const initialDuration = wrapper.duration
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      expect(wrapper.timeLeft.value).toBe(initialDuration - 1)
+      vi.restoreAllMocks()
+    })
+  })
+
+  describe('Time-up', () => {
     // vi.useFakeTimers() to mock timer
     beforeEach(() => {
       vi.useFakeTimers()

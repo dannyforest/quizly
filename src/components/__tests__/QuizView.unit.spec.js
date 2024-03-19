@@ -18,6 +18,9 @@ describe('initial state', () => {
   it('selectedTimeLimit initially returns 60', () => {
     expect(wrapper.vm.selectedTimeLimit).toBe('60')
   })
+	it("should initially set the value of selectedNumQuestions to 5", () => {
+		expect(wrapper.vm.selectedNumQuestions).toBe("5");
+	})
   it('initial state should indicate that the quiz has not started', () => {
     // Check if the quizStarted is false, indicating the quiz hasn't started
     expect(wrapper.vm.quizStarted).toBe(false)

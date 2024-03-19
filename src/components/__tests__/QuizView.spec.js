@@ -6,6 +6,8 @@ import StartOptions from '@/components/StartOptions.vue'
 import Quiz from '@/components/Quiz.vue'
 import Timer from '@/components/Timer.vue'
 import EditQuestionsView from '@/views/EditQuestionsView.vue'
+import Leaderboards from '@/components/Leaderboards.vue'
+import ProgressBar from '@/components/ProgressBar.vue'
 import { nextTick } from 'vue'
 
 const routes = [
@@ -41,11 +43,52 @@ describe('QuizView', () => {
 
       expect(wrapper.findComponent(Timer).exists()).toBe(true)
     })
+    it('renders the Quiz component', async () => {
+      // Find the StartOptions component
+      const startOptions = wrapper.findComponent({ name: 'StartOptions' })
+      // Find input elements -> user name, category selection, duration, and number of questions
+      const nameInput = startOptions.find('input')
+      const categorySelect = startOptions.findAll('select')[0]
+
+      // Simulate user inputs
+      await nameInput.setValue('Jojo')
+      await categorySelect.setValue('Geography')
+
+      // Simulate clicking the start button
+      startOptions.find('.start-button').trigger('click')
+
+      // Wait for Vue to process changes
+      await wrapper.vm.$nextTick()
+      expect(wrapper.findComponent(Quiz).exists()).toBe(true)
+    })
+  })
+  it('renders the ProgressBar component', async () => {
+    // Find the StartOptions component
+    const startOptions = wrapper.findComponent({ name: 'StartOptions' })
+    // Find input elements -> user name, category selection, duration, and number of questions
+    const nameInput = startOptions.find('input')
+    const categorySelect = startOptions.findAll('select')[0]
+
+    // Simulate user inputs
+    await nameInput.setValue('Jojo')
+    await categorySelect.setValue('Geography')
+
+    // Simulate clicking the start button
+    startOptions.find('.start-button').trigger('click')
+
+    // Wait for Vue to process changes
+    await wrapper.vm.$nextTick()
+    expect(wrapper.findComponent(ProgressBar).exists()).toBe(true)
   })
   it('renders StartOptionsComponent', () => {
     const wrapper = mount(QuizView)
     const startOptions = wrapper.findComponent(StartOptions)
     expect(startOptions).toBeDefined()
+  })
+  describe('renders Leaderboards (exists)', () => {
+    it('renders the Leaderboards component', () => {
+      expect(wrapper.findComponent(Leaderboards).exists()).toBe(true)
+    })
   })
   describe('handleCategoryChanged', () => {
     it('changes selectedCategory when category-changed is emitted from the StartOptions Component', async () => {
@@ -83,7 +126,23 @@ describe('QuizView', () => {
       expect(router.currentRoute.value.path).toBe('/edit')
     })
   })
-	describe('Timer', () => {
+  it('displays the selected category in the Leaderboards component', async () => {
+    // Find the StartOptions component
+    const startOptions = wrapper.findComponent({ name: 'StartOptions' })
+    const categorySelect = startOptions.findAll('select')[0]
+    await categorySelect.setValue('Geography')
+
+    await wrapper.vm.$nextTick()
+    const LeaderboardComponent = wrapper.findComponent({ name: 'Leaderboards' })
+    expect(LeaderboardComponent.props('selectedCategory')).toBe('Geography')
+  })
+
+  describe('renders Leaderboards (exists)', () => {
+    it('renders the Leaderboards component', () => {
+      expect(wrapper.findComponent(Leaderboards).exists()).toBe(true)
+    })
+  })
+  describe('Timer', () => {
     it('sends the right duration to the Timer component', async () => {
       // Find the StartOptions component
       const startOptions = wrapper.findComponent({ name: 'StartOptions' })
