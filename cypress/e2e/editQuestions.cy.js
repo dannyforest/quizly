@@ -7,8 +7,7 @@ describe('EditQuestions', () => {
     const choice2 = 'Binx'
     const choice3 = 'Goose'
 
-    cy.visit('http://localhost:4173')
-    cy.get('button:eq(1)').click()
+    cy.visit('http://localhost:4173/edit')
     const questionInput = cy.get('.question-input:eq(0)')
     questionInput.type(question)
     const categorySelect = cy.get('.category-dropdown:eq(0)')
@@ -60,7 +59,7 @@ describe('EditQuestions', () => {
         .should('have.value', choice3)
     })
   })
-  it('allows a user to edit a question', () => {
+  it.only('allows a user to edit a question', () => {
     cy.visit('http://localhost:4173/edit')
 
     cy.get('.question-block')
@@ -73,5 +72,22 @@ describe('EditQuestions', () => {
         cy.get('.answer-input').clear().type('New correct answer')
       })
     cy.get('.save-button').click()
+    cy.on('window:alert', (text) => {
+      expect(text).to.contains('Questions saved!')
+    })
+    cy.get('.question-block')
+      .first()
+      .within(() => {
+        cy.get('.question-input').should('have.value', 'New question text')
+
+        cy.get('.choice-input input').first().should('have.value', 'New answer option')
+
+        cy.get('.answer-input').should('have.value', 'New correct answer')
+      })
+  })
+  it('lets a user delete a question', () => {
+    cy.visit('http://localhost:4173/edit')
+    cy.get('.delete-button').eq(0).click()
+    cy.get('.question-input').eq(1).should('have.value', 'What is 2 + 2?')
   })
 })
