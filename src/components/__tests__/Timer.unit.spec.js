@@ -43,7 +43,7 @@ describe('Timer', () => {
     expect(clearIntervalMock).toHaveBeenCalledTimes(1)
   })
   describe('timeLeft', () => {
-		const duration = 300;
+    const duration = 300
     beforeEach(() => {
       vi.useFakeTimers()
     })
@@ -53,14 +53,14 @@ describe('Timer', () => {
           duration
         }
       })
-      
-			vi.advanceTimersByTime(1000)
+
+      vi.advanceTimersByTime(1000)
 
       expect(wrapper.vm.timeLeft).toBe(duration - 1)
       vi.restoreAllMocks()
     })
   })
-
+  // Ce test ne passe pas, mais c'est ok avec Danny
   describe('Time-up', () => {
     // vi.useFakeTimers() to mock timer
     beforeEach(() => {
