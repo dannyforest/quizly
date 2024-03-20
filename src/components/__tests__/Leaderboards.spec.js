@@ -41,6 +41,4 @@ describe('Tests d/intégration pour Leaderboards.vue', () => {
     // Vérifiez que le composant affiche un message approprié
     expect(htmlPTag.text()).toContain('Select a category to view the leaderboard.');
   });
-
-  // Ajoutez d'autres tests ici
 });

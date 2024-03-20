@@ -28,19 +28,6 @@ describe('Timer', () => {
     expect(wrapper.text()).toContain('Time left: 0:04');
   });
 
-//   it('emits "time-up" event when timer reaches 0', async () => {
-//     const duration = 1; // 1 seconde
-//     const wrapper = shallowMount(Timer, {
-//       props: { duration }
-//     });
-
-//     // Attends que le timer atteigne 0
-//     await new Promise(resolve => setTimeout(resolve, 1000));
-
-//     // Vérifie que l'événement "time-up" a été émis
-//     expect(wrapper.emitted('time-up')).toBeFalsy();
-//   });
-
   it('stops the timer when stop method is called', async () => {
     const duration = 10; // 10 secondes
     const wrapper = shallowMount(Timer, {

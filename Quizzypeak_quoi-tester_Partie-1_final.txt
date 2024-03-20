@@ -1,0 +1,145 @@
+Analyse finale
+Projet : QuizzyPeak
+
+Partie 1
+
+Tests réalisés:
+•	Quand la catégorie est sélectionné on affiche le tableau des scores
+•	Quand il n'y a pas de score a affiché pour la catégorie un message particulier s'affiche
+•	Quand il n'y a pas de catégorie sélectionné un message particulier s'affiche
+•	Quand le quiz commence la bar de progression affiche la bonne valeur
+•	Quand on passe a la question suivant la bar de progression affiche la bonne valeur
+•	Quand on complete le quiz la bar de progression affiche la bonne valeur
+•	Quand on est a l'état initial le timer affiche la bonne valeur
+•	Quand le temps diminue le timer affiche la bonne valeur
+•	Quand le composant est unmounted le timer s'arrete
+•	Quand on appelle la méthode stop le timer s'arrete
+•	Quand on passe a une question, la question et les choix s'affichent correctement
+•	Quand un choix de réponse est sélectionné un evenement est émis
+•	Quand le quiz est complété un événement est émis
+
+Autres test potentiels trouvé initialement
+•	Quand on charge la page les images s'affichent bien
+
+Tester les inputs du quiz
+•	Quand un clique sur l'input name le champs devient selectionne avec une bordure
+•	Quand on clique sur l'input name le curseur se place au debut du champs
+•	Quand on clique sur un menu deroulant il s'affiche
+•	Quand on clique sur start sans avoir rempli tous les champs une alerte apparait
+
+Tester le bouton start quiz
+•	Quand on clique sur le bouton start on est amené a la page de quiz
+•	Quand on est sur la page quiz le timer affiche le bon temps selectionné
+•	Quand on est sur la page quiz le nombre de questions affichés est celui sélectionné
+•	Quand on est sur la page quiz la bar de progres affiche la bonne valeur
+•	Quand on complete le quiz la section quiz result s'affiche correctement
+		Le score
+		La question
+		La reponse
+		Le bouton restart quiz
+•	Quand on clique sur le bouton restart quiz nous sommes amené a la page principale
+
+Tester le bouton edit questions
+•	Quand on clique sur le bouton edit nous sommes amené a la page edit
+
+Tester la page edit
+•	Quand on clique sur le bouton back nous sommes ramené sur la page principale
+•	Quand on clique le champs New question text un encadré s'affiche
+•	Quand on clique le champs Select a category le menu deroulant s'affiche
+•	Quand on clique le champs Choice une bordure s'affiche
+•	Quand on clique le bouton add choice un champs Choice s'affiche
+•	Quand on clique le champs Correct Answer une bordure s'affiche
+•	Quand on clique le bouton add question une alerte confirme l'ajout
+•	Quand on clique le bouton Add question une question est ajouté au bas de la page
+•	Quand on clique le bouton delete sur une question un modal de confirmation s'affiche
+•	Quand on clique ok sur le modal la question est supprimé
+•	Quand on clique anulé sur le modal la question n'est pas supprimé
+•	Quand on clique un champs d'input sur une question il devient encadré en noir
+•	Quand on clique sur le champs menu deroulant de la category d'une question la liste de category s'affiche
+•	Quand on clique sur le bouton Save Questions un modal de confirmation apparait
+
+Tester l’affichage de la section leaderboard
+•	Quand on complete un test les bonnes valeurs s'affichent dans la section leaderboard
+		Category
+		Nom
+		Score
+•	Quand on complete un test dans une autre Category le resultat s'affiche pour la categorie en cours
+			
+Failles potentielles et bugs
+
+Failles de performance :
+
+•	La page ne permet pas la restoration du cache
+•	Les script javscript pourait etre minifier pour de meilleures performances
+•	Les images devraient être au format webP plutot que jpeg ou png
+•	Les images pourrait spécifié une hauteur ou une largeur
+•	L'image du logo est trop grosse/lourde
+•	Utiliser le lazy loading pour eviter de charger des scripts javascript qui ne sont pas utiliser tout de suite
+•	Eviter d'utiliser des scripts javscript qui ne sont pas jour (onloadwff.js:71, h1-check.js:107, web-client-content-script.js:2)
+
+Faille d'accessibilité :
+
+•	Les couleurs d'arrière-plan et de premier plan ne sont pas suffisamment contrastées.
+•	Certains éléments ne sont associés à aucun élément de libellé.
+•	Les éléments d'en-tête ne sont pas classés séquentiellement par ordre décroissant.
+
+Failles de sécurité :
+
+•	Garantir l'efficacité de la CSP contre les attaques XSS.
+
+Autres failles :
+
+•	Le document ne contient pas d'attribut "meta description" (BONNES PRATIQUES RELATIVES AU CONTENU).
+
+Bugs
+
+•	Quand le timer s'arrete on peut continuer a repondre au questionnaire
+•	Certaines categories nom pas le bon nombre de question et donc le nombre de question choisit pour le quiz ne correspond pas au nombre choisit (ex. categorie art a 5 questions, le quiz n'aura que 3 questions)
+•	On peut continuer de répondre a la dernière question du quiz, meme lorsque le quiz est terminé
+•	Lorsque l'on réponde a la dernière question du quiz apres l'avoir complété le score est modifié et peut meme passé au dessus de 100% (ex. categorie art, le résultat pourra passé a 4/3 de résultat final)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
