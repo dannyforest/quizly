@@ -43,21 +43,20 @@ describe('Timer', () => {
     expect(clearIntervalMock).toHaveBeenCalledTimes(1)
   })
   describe('timeLeft', () => {
+		const duration = 300;
     beforeEach(() => {
       vi.useFakeTimers()
     })
     it('should decrease timeLeft over time', async () => {
       const wrapper = mount(Timer, {
         props: {
-          duration: 300
+          duration
         }
       })
-      vi.runAllTimers()
+      
+			vi.advanceTimersByTime(1000)
 
-      const initialDuration = wrapper.duration
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      expect(wrapper.timeLeft.value).toBe(initialDuration - 1)
+      expect(wrapper.vm.timeLeft).toBe(duration - 1)
       vi.restoreAllMocks()
     })
   })
