@@ -13,15 +13,24 @@
   ],
   "compilerOptions": {
     "outDir": "out",
-    "module": "commonjs",
-    "target": "es6",
+    // "module": "commonjs",
+    // "target": "es6",
+    "module": "ESNext",
+    "target": "ESNext",
     "moduleResolution": "node",
     "allowJs": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
     "removeComments": true,
-    "sourceMap": true,
+    "sourceMap": false,
+    "inlineSourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
 }
+// {
+//   "compilerOptions": {
+//     "module": "ESNext",
+//     "target": "ESNext"
+//   }
+// }
